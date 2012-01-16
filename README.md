@@ -102,8 +102,7 @@ to the file `/usr/local/texlive/2011/texmf.cnf`
 
 If the EPUB generation causes problems, [check this page][4].
 
-Known Problems
---------------
+### Installing dblatex
 
 dblatex has to be installed using a custom Homebrew formula, because the
 default installation does not include it at the time of this writing.
