@@ -1,0 +1,46 @@
+eBook Asciidoc Template
+=======================
+:author: Adrian Kosmaczewski
+:email:  email@server.com
+:revnumber: 1.0
+:revdate:   January 1st, 2012
+:doctype: book
+:toc:
+:icons:
+:data-uri:
+:lang: en
+:language: javascript
+
+[preface]
+include::about.asciidoc[]
+include::preface.asciidoc[]
+
+Introduction
+============
+
+include::introduction.asciidoc[]
+
+First Part
+==========
+
+include::chapter2.asciidoc[]
+
+Second Part
+===========
+
+include::chapter3.asciidoc[]
+
+[colophon]
+include::colophon.asciidoc[]
+
+include::bibliography.asciidoc[]
+
+[appendix]
+include::appendix.asciidoc[]
+
+ifdef::backend-docbook[]
+[index]
+Index
+-----
+endif::backend-docbook[]
+
