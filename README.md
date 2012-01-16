@@ -89,14 +89,18 @@ at the `_build` subfolder.
 Troubleshooting
 ---------------
 
-If the generation of the PDF fails during "makeindex" follow the
-instructions in this page:
-<http://hackage.haskell.org/trac/ghc/wiki/Building/MacOSX> and add the
-following line: `openout_any = r` to the file
-`/usr/local/texlive/2011/texmf.cnf`
+### PDF build error
 
-If the EPUB generation causes problems, check this page:
-<http://francisshanahan.com/index.php/2011/fixing-epub-problem-docbook-xsl-asciidoc-a2x/>
+If the generation of the PDF fails during "makeindex" follow the
+instructions [in this page][5] and add the following line: 
+
+    openout_any = r
+
+to the file `/usr/local/texlive/2011/texmf.cnf`
+
+### EPUB build error
+
+If the EPUB generation causes problems, [check this page][4].
 
 Known Problems
 --------------
@@ -118,4 +122,6 @@ However, it creates an index when required.
 [1]:http://www.methods.co.nz/asciidoc/
 [2]:http://mxcl.github.com/homebrew/
 [3]:http://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000234621
+[4]:http://francisshanahan.com/index.php/2011/fixing-epub-problem-docbook-xsl-asciidoc-a2x/
+[5]:http://hackage.haskell.org/trac/ghc/wiki/Building/MacOSX
 
