@@ -30,10 +30,10 @@ Word or Pages?
   about any operating system; files are just plain text files that can
   be edited with gEdit, Notepad, Emacs, Vim, TextEdit, or any other
   tool.
-- Using a simpler markup language like Markdown or Asciidoc (used in
-  this template) is simpler than using LaTeX or other SGML-like
-  language, making the files readable and lean even when edited in a
-  text editor without any syntax highlighting or formatting support.
+- Markup languages like Markdown or Asciidoc (used in this template) are
+  simpler and more readable than LaTeX or other SGML-like languages,
+  making the files readable and lean even when edited in a text editor
+  without any syntax highlighting or formatting support.
 - Finally, being able to streamline the creation of the three versions
   of the book in just one command-line operation allows the whole setup
   to be automatized.
