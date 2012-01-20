@@ -19,11 +19,8 @@ mkdir $DIR
 cp -R -L /usr/local/etc/asciidoc/images $DIR
 cp images/* $DIR
 cp chapters/* $DIR
+cp conf/* $DIR
 cp master.asciidoc $DIR
-cp asciidoc.conf $DIR
-cp a2x.conf $DIR
-cp style.css $DIR
-cp custom.sty $DIR
 
 cd $DIR
 
