@@ -2,10 +2,21 @@
 # This script generates all the output files from the source Asciidoc
 # files.
 
+# Dependancies:
+#     $ apt-get install asciidoc
+#     $ apt-get install tex-gyre
+
 # Constants
 DIR=_build
-PDFOPTS="--format=pdf --conf-file=a2x.conf"
-EPUBOPTS="--format=epub --conf-file=a2x.conf --stylesheet=style.css"
+TITLE="eBook-Template"
+
+# Uncomment or comment to enable or disable
+PDF="yes"
+EPUB="yes"
+# HTMLHELP="yes"
+
+ASCIIDOC_IMAGES_DIR="/usr/share/asciidoc/images"
+
 
 # If the build directory exists, delete it
 if [ -d "$DIR" ]; then
@@ -16,33 +27,65 @@ fi
 mkdir $DIR
 
 # Copy all files to the build directory
-cp -R -L /usr/local/etc/asciidoc/images $DIR
-cp images/* $DIR
-cp chapters/* $DIR
-cp conf/* $DIR
-cp master.asciidoc $DIR
+if [ -d "$ASCIIDOC_IMAGES_DIR" ]
+then
+    cp -R -L $ASCIIDOC_IMAGES_DIR $DIR
+else
+    echo "WARNING: $ASCIIDOC_IMAGES_DIR does not exists; errors may ensue."
+fi
+if [ ! -d $DIR/images ]
+then
+    mkdir $DIR/images
+fi
+
+search_for="master.asciidoc chapters/* conf/*"
+clean_files=""
+if [ -n "$(ls images/)" ]
+then
+    search_for="$search_for images/*"
+fi
+for p in $search_for; do
+    cp $p $DIR
+    clean_files="$clean_files $(basename $p)"
+done
 
 cd $DIR
 
 # Generate HTML
-asciidoc --out-file=booklet.html master.asciidoc
+asciidoc --out-file=$TITLE.html master.asciidoc
+
+# Generate HTML Help
+if [ "$HTMLHELP" = "yes" ]
+then
+    mkdir htmlhelp
+    a2x --format=htmlhelp --conf-file=a2x.conf master.asciidoc
+    mv master.hhc htmlhelp/$TITLE.hhc
+    mv master.hhk htmlhelp/$TITLE.hhk
+    mv master.hhp htmlhelp/$TITLE.hhp
+    mv master.htmlhelp htmlhelp/$TITLE.htmlhelp
+fi
 
 # Generate PDF
-a2x $PDFOPTS master.asciidoc
-mv master.pdf booklet.pdf
+if [ "$PDF" = "yes" ]
+then
+    a2x --format=pdf --conf-file=a2x.conf master.asciidoc
+    mv master.pdf $TITLE.pdf
+fi
 
 # Generate EPUB
-a2x $EPUBOPTS master.asciidoc
-mv master.epub booklet.epub
-
-# Create Kindle version
-/Applications/KindleGen_Mac_i386_v2/kindlegen booklet.epub
+if [ "$EPUB" = "yes" ]
+then
+    a2x --format=epub --conf-file=a2x.conf --stylesheet=style.css master.asciidoc
+    mv master.epub $TITLE.epub
+fi
 
 # Clean up, so that only the product files remain
-rm *.png
-rm *.conf
-rm *.asciidoc
-rm *.css
-rm -r images/
-rm *.sty
-
+# rm *.png
+# rm *.conf
+# rm *.asciidoc
+# rm *.css
+# rm *.sty
+for p in $clean_files; do
+    rm $p
+done
+rm -r images
