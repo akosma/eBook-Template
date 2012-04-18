@@ -69,7 +69,7 @@ Follow these instructions to install the required libraries in Mac OS X:
 4. Download and install the latest MacTeX package from
     `http://www.tug.org/mactex/`
 5. Install the `dblatex` package manually:
-    - `brew install https://raw.github.com/bartschuller/homebrew/master/Library/Formula/dblatex.rb`
+    - `brew install https://raw.github.com/gist/1430194/fc7142e21f78c19bee70c96fbef7ed583bca23b5/dblatex.rb`
 6. Download the [kindlegen][3] tool and install it in the following
    path:
     - `/Applications/KindleGen_Mac_i386_v2/kindlegen`
