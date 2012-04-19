@@ -41,7 +41,7 @@ for p in $search_for; do
     cp $p $DIR
     clean_files="$clean_files $(basename $p)"
 done
-for p in $(ls images); do
+for p in $(ls images/*); do
     cp $p $DIR/images
 done
 
