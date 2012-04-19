@@ -40,13 +40,12 @@ fi
 
 search_for="master.asciidoc chapters/* conf/*"
 clean_files=""
-if [ -n "$(ls images/)" ]
-then
-    search_for="$search_for images/*"
-fi
 for p in $search_for; do
     cp $p $DIR
     clean_files="$clean_files $(basename $p)"
+done
+for p in $(ls images); do
+    cp $p $DIR/images
 done
 
 cd $DIR
