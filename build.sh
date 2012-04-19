@@ -2,10 +2,6 @@
 # This script generates all the output files from the source Asciidoc
 # files.
 
-# Dependancies:
-#     $ apt-get install asciidoc
-#     $ apt-get install tex-gyre
-
 # Constants
 DIR=_build
 TITLE="eBook-Template"
@@ -13,9 +9,10 @@ TITLE="eBook-Template"
 # Uncomment or comment to enable or disable
 PDF="yes"
 EPUB="yes"
+KINDLE="yes"
 # HTMLHELP="yes"
 
-ASCIIDOC_IMAGES_DIR="/usr/share/asciidoc/images"
+ASCIIDOC_IMAGES_DIR="/usr/local/etc/asciidoc/images"
 
 
 # If the build directory exists, delete it
@@ -72,10 +69,16 @@ then
 fi
 
 # Generate EPUB
-if [ "$EPUB" = "yes" ]
+if [ "$EPUB" = "yes" -o "$KINDLE" = "yes" ]
 then
     a2x --format=epub --conf-file=a2x.conf --stylesheet=style.css master.asciidoc
     mv master.epub $TITLE.epub
+fi
+
+# Create Kindle version
+if [ "$KINDLE" = "yes" ]
+then
+    /Applications/KindleGen_Mac_i386_v2/kindlegen $TITLE.epub
 fi
 
 # Clean up, so that only the product files remain
