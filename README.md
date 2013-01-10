@@ -71,7 +71,7 @@ Follow these instructions to install the required libraries in Mac OS X:
     - `sudo port install dblatex`
 5. Download the [kindlegen][3] tool and install it in the following
    path:
-    - `/Applications/KindleGen_Mac_i386_v2/kindlegen`
+    - `/Applications/KindleGen_Mac_i386_v2_7/kindlegen`
 
 How to build the book 
 ---------------------
@@ -87,19 +87,6 @@ at the `_build` subfolder.
 
 Troubleshooting
 ---------------
-
-### PDF build error
-
-If the generation of the PDF fails during "makeindex" follow the
-instructions [in this page][5] and add the following line: 
-
-    openout_any = r
-
-to the file `/usr/local/texlive/2011/texmf.cnf`
-
-### EPUB build error
-
-If the EPUB generation causes problems, [check this page][4].
 
 ### Why not generating the HTML using a2x?
 

@@ -36,7 +36,7 @@ a2x $EPUBOPTS master.asciidoc
 mv master.epub booklet.epub
 
 # Create Kindle version
-/Applications/KindleGen_Mac_i386_v2/kindlegen booklet.epub
+/Applications/KindleGen_Mac_i386_v2_7/kindlegen booklet.epub
 
 # Clean up, so that only the product files remain
 rm *.png
