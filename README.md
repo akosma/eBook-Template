@@ -2,7 +2,8 @@ Template for Writing an eBook
 =============================
 
 This project contains a template used to write eBooks using
-[AsciiDoc][1], Git, MacVim and other tools on Mac OS X.
+[AsciiDoc][1], Git, and any text editor in Mac OS X "Mountain Lion" or
+later.
 
 The aim of the project is to provide a boilerplate used to generate
 eBooks in several formats on one operation:
@@ -60,16 +61,16 @@ Software Requirements
 
 Follow these instructions to install the required libraries in Mac OS X:
 
-1. Install [Homebrew][2] if not already installed.
-    - If already installed, remember to run `brew update`.
-2. Download and install `asciidoc` using Homebrew:
-    - `brew install asciidoc`
-3. Install source-highlight with Homebrew:
-    - `brew install source-highlight`
-4. Download and install the latest MacTeX package from
+1. Install [MacPorts][2] if not already installed.
+    - If already installed, remember to run `sudo port upgrade`.
+2. Download and install `asciidoc` using MacPorts:
+    - `sudo port install asciidoc`
+3. Install source-highlight with MacPorts:
+    - `sudo port install source-highlight`
+4. Install the `dblatex` package with MacPorts:
+    - `sudo port install dblatex`
+5. Download and install the latest MacTeX package from
     `http://www.tug.org/mactex/`
-5. Install the `dblatex` package manually:
-    - `brew install https://raw.github.com/gist/1430194/fc7142e21f78c19bee70c96fbef7ed583bca23b5/dblatex.rb`
 6. Download the [kindlegen][3] tool and install it in the following
    path:
     - `/Applications/KindleGen_Mac_i386_v2/kindlegen`
@@ -102,12 +103,6 @@ to the file `/usr/local/texlive/2011/texmf.cnf`
 
 If the EPUB generation causes problems, [check this page][4].
 
-### Installing dblatex
-
-dblatex has to be installed using a custom Homebrew formula, because the
-default installation does not include it at the time of this writing.
-This might change in the future.
-
 ### Why not generating the HTML using a2x?
 
 Using a2x for the HTML creation has the following drawbacks:
@@ -134,7 +129,7 @@ Use, share, transform, as much as you want. I hope you find it useful!
 
 
 [1]:http://www.methods.co.nz/asciidoc/
-[2]:http://mxcl.github.com/homebrew/
+[2]:http://www.macports.org
 [3]:http://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000234621
 [4]:http://francisshanahan.com/index.php/2011/fixing-epub-problem-docbook-xsl-asciidoc-a2x/
 [5]:http://hackage.haskell.org/trac/ghc/wiki/Building/MacOSX
