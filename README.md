@@ -69,9 +69,7 @@ Follow these instructions to install the required libraries in Mac OS X:
     - `sudo port install source-highlight`
 4. Install the `dblatex` package with MacPorts:
     - `sudo port install dblatex`
-5. Download and install the latest MacTeX package from
-    `http://www.tug.org/mactex/`
-6. Download the [kindlegen][3] tool and install it in the following
+5. Download the [kindlegen][3] tool and install it in the following
    path:
     - `/Applications/KindleGen_Mac_i386_v2/kindlegen`
 
