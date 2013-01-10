@@ -16,7 +16,7 @@ fi
 mkdir $DIR
 
 # Copy all files to the build directory
-cp -R -L /usr/local/etc/asciidoc/images $DIR
+cp -R -L /opt/local/etc/asciidoc/images $DIR
 cp images/* $DIR
 cp chapters/* $DIR
 cp conf/* $DIR
