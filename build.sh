@@ -5,7 +5,7 @@
 # Constants
 DIR=_build
 PDFOPTS="--format=pdf --conf-file=a2x.conf"
-EPUBOPTS="--format=epub --fop --conf-file=a2x.conf --stylesheet=style.css"
+EPUBOPTS="--format=epub --conf-file=a2x.conf --stylesheet=style.css"
 export XML_CATALOG_FILES=/opt/local/share/xsl/docbook-xsl/catalog.xml
 
 # If the build directory exists, delete it
