@@ -5,7 +5,7 @@
 # Constants
 DIR=_build
 PDFOPTS="--format=pdf --conf-file=a2x.conf"
-EPUBOPTS="--format=epub --conf-file=a2x.conf --stylesheet=style.css"
+EPUBOPTS="--format=epub --fop --conf-file=a2x.conf --stylesheet=style.css"
 
 # If the build directory exists, delete it
 if [ -d "$DIR" ]; then
