@@ -65,5 +65,6 @@ remove_files: folder
 	rm *.asc; \
 	rm *.css; \
 	rm -r images/; \
-	rm *.sty
+	rm *.sty; \
+	rm *.xml
 
