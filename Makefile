@@ -60,11 +60,11 @@ create_kindle: create_epub
 # Clean up, so that only the product files remain
 remove_files: folder
 	cd ${DIR}; \
-	rm *.png; \
-	rm *.conf; \
-	rm *.asc; \
-	rm *.css; \
-	rm -r images/; \
-	rm *.sty; \
-	rm *.xml
+	rm -f *.png; \
+	rm -f *.conf; \
+	rm -f *.asc; \
+	rm -f *.css; \
+	rm -rf images/; \
+	rm -f *.sty; \
+	rm -f *.xml
 
