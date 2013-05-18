@@ -79,8 +79,8 @@ How to build the book
 ---------------------
 
 1. Make sure AsciiDoc and dblatex are properly installed.
-2. Execute the booklet/build.sh script. This will create the PDF, ePub
-   and HTML versions of the book.
+2. Execute the `make` command. This will create the PDF, ePub and HTML
+   versions of the book.
 3. The script also generates the .mobi (Amazon Kindle) version if the
    [kindlegen][3] tool is installed.
 
