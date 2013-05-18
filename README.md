@@ -51,10 +51,10 @@ chapter.
 
 Images are stored as PNG files in the `images` folder.
 
-The `build.sh` script creates a temporary `_build` folder, copies all
-the different elements in it (the master file, the chapters and the
-images) and commands the execution of the whole toolchain in order to
-get the final result.
+The Makefile creates a temporary `_build` folder, copies all the
+different elements in it (the master file, the chapters and the images)
+and commands the execution of the whole toolchain in order to get the
+final result.
 
 Software Requirements
 ---------------------
