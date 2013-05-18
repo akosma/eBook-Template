@@ -81,8 +81,11 @@ How to build the book
 1. Make sure AsciiDoc and dblatex are properly installed.
 2. Execute the `make` command. This will create the PDF, ePub and HTML
    versions of the book.
-3. The script also generates the .mobi (Amazon Kindle) version if the
-   [kindlegen][3] tool is installed.
+3. `make pdf`, `make html`, `make epub` and `make kindle` each generate
+   the specified version of the booklet.
+4. `make clean` removes the `_build` folder.
+
+The .mobi (Amazon Kindle) version requires the [kindlegen][3] tool.
 
 After the build process completes, the compiled eBooks will be available
 at the `_build` subfolder.
