@@ -22,7 +22,9 @@ epub: clean create_epub remove_files
 kindle: clean create_kindle remove_files
 
 clean:
-	if [ -d "${DIR}" ]; then rm -r ${DIR}; fi
+	if [ -d "${DIR}" ]; \
+		then rm -r ${DIR}; \
+	fi
 
 #  ---------------------------------
 #  Private targets
