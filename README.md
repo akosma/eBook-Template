@@ -61,16 +61,16 @@ Software Requirements
 
 Follow these instructions to install the required libraries in Mac OS X:
 
-1. Install [MacPorts][2] if not already installed.
-    - If already installed, remember to run `sudo port upgrade`.
-2. Download and install `asciidoc` using MacPorts:
-    - `sudo port install asciidoc`
-3. Install source-highlight with MacPorts:
-    - `sudo port install source-highlight`
-4. Install the `dblatex` package with MacPorts:
-    - `sudo port install dblatex`
-5. Install the `docbook-xsl` package with MacPorts:
-    - `sudo port install docbook-xsl`
+1. Install [Homebrew][2] if not already installed.
+    - If already installed, remember to run `brew update; brew upgrade`.
+2. Download and install `asciidoc` using Homebrew:
+    - `brew install asciidoc`
+3. Install source-highlight with Homebrew:
+    - `brew install source-highlight`
+4. Install the `dblatex` package with Homebrew:
+    - `brew install dblatex`
+5. If the above command does not work, follow the instructions here:
+   `https://gist.github.com/dustinschultz/6554087`
 6. Download the [kindlegen][3] tool and install it in the following
    path:
     - `/Applications/KindleGen_Mac_i386_v2_7/kindlegen`
@@ -119,7 +119,7 @@ Use, share, transform, as much as you want. I hope you find it useful!
 
 
 [1]:http://www.methods.co.nz/asciidoc/
-[2]:http://www.macports.org
+[2]:http://brew.sh
 [3]:http://www.amazon.com/gp/feature.html?ie=UTF8&docId=1000234621
 [4]:http://francisshanahan.com/index.php/2011/fixing-epub-problem-docbook-xsl-asciidoc-a2x/
 [5]:http://hackage.haskell.org/trac/ghc/wiki/Building/MacOSX

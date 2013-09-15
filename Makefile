@@ -7,6 +7,7 @@ OUTPUT = book
 PDFOPTS = --format=pdf --conf-file=a2x.conf
 KINDLEGEN = /Applications/KindleGen_Mac_i386_v2_7/kindlegen
 EPUBOPTS = --format=epub --conf-file=a2x.conf --stylesheet=style.css
+ASCIIDOC_ETC = /usr/local/Cellar/asciidoc/8.6.8/etc/asciidoc
 
 
 #  ---------------------------------
@@ -32,7 +33,7 @@ clean:
 create_folder:
 	if [ ! -d "${DIR}" ]; then \
 		mkdir ${DIR}; \
-		cp -R -L /opt/local/etc/asciidoc/images ${DIR}; \
+		cp -R -L ${ASCIIDOC_ETC}/images ${DIR}; \
 		cp images/* ${DIR}; \
 		cp chapters/* ${DIR}; \
 		cp conf/* ${DIR}; \
@@ -46,13 +47,14 @@ create_html: create_folder
 
 #  Generate PDF
 create_pdf: create_folder
+	export XML_CATALOG_FILES=${ASCIIDOC_ETC}/dblatex; \
 	cd ${DIR}; \
 	a2x ${PDFOPTS} ${MASTER}.asc; \
 	mv ${MASTER}.pdf ${OUTPUT}.pdf
 
 #  Generate EPUB
 create_epub: create_folder
-	export XML_CATALOG_FILES=/opt/local/share/xsl/docbook-xsl/catalog.xml; \
+	export XML_CATALOG_FILES=${ASCIIDOC_ETC}/dblatex; \
 	cd ${DIR}; \
 	a2x ${EPUBOPTS} ${MASTER}.asc; \
 	mv ${MASTER}.epub ${OUTPUT}.epub
