@@ -10,7 +10,7 @@ KINDLEGEN_OPTS = -c2
 EPUBOPTS = --format=epub --conf-file=a2x.conf --stylesheet=style.css
 ASCIIDOC_IMAGES = /usr/local/Cellar/asciidoc/8.6.8/etc/asciidoc/images
 XML_CATALOG_FILES = /usr/local/Cellar/docbook-xsl/1.78.1/docbook-xsl/catalog.xml
-DROPBOX = ~/Dropbox/La\ Cave\ Vivante/Manual
+DROPBOX = ~/Dropbox/Public
 
 
 #  ---------------------------------
