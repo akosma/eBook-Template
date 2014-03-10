@@ -1,0 +1,10 @@
+<mediaobject role="cover">
+	<imageobject><imagedata fileref="A4.png" format="PNG"/></imageobject>
+	<textobject><phrase>eBook Template phrase</phrase></textobject>
+</mediaobject>
+
+<legalnotice>
+	<literallayout class="monospaced">
+		Copyright 2014
+	</literallayout>
+</legalnotice>
