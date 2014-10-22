@@ -1,5 +1,8 @@
 #  This makefile generates all the output files from the source Asciidoc files.
 
+# --------------------------------------------------------------------------------
+# Craig BUCHANAN, 2014-03-10: --attribute=docinfo to EPUBOPTS; associates meta-data file (conf/master-docinfo.xml) with master.asc; 
+
 #  Constants
 DIR = _build
 BOOK = master
@@ -7,7 +10,7 @@ HTMLOPTS = -a max-width=55em
 PDFOPTS = --format=pdf --conf-file=a2x.conf --fop
 KINDLEGEN_PATH = /Applications/KindleGen_Mac_i386_v2_7
 KINDLEGEN_OPTS = -c2
-EPUBOPTS = --format=epub --conf-file=a2x.conf --stylesheet=style.css
+EPUBOPTS = --format=epub --conf-file=a2x.conf --stylesheet=style.css --attribute=docinfo
 ASCIIDOC_IMAGES = /usr/local/Cellar/asciidoc/8.6.8/etc/asciidoc/images
 XML_CATALOG_FILES = /usr/local/Cellar/docbook-xsl/1.78.1/docbook-xsl/catalog.xml
 DROPBOX = ~/Dropbox/Public
