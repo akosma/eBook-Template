@@ -8,7 +8,7 @@ PDFOPTS = --format=pdf --conf-file=a2x.conf --fop
 KINDLEGEN_PATH = /Applications/KindleGen_Mac_i386_v2_7
 KINDLEGEN_OPTS = -c2
 EPUBOPTS = --format=epub --conf-file=a2x.conf --stylesheet=style.css
-ASCIIDOC_IMAGES = /usr/local/Cellar/asciidoc/8.6.8/etc/asciidoc/images
+ASCIIDOC_IMAGES = /usr/local/etc/asciidoc/images
 XML_CATALOG_FILES = /usr/local/Cellar/docbook-xsl/1.78.1/docbook-xsl/catalog.xml
 DROPBOX = ~/Dropbox/Public
 
