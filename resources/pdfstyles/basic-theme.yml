@@ -1,0 +1,25 @@
+page:
+  layout: portrait
+  margin: [0.75in, 1in, 0.75in, 1in]
+  size: A4
+base:
+  font_color: #000000
+  font_family: Helvetica
+  font_size: 14
+  line_height_length: 17
+  line_height: $base_line_height_length / $base_font_size
+vertical_spacing: $base_line_height_length
+heading:
+  font_color: #262626
+  font_size: 17
+  font_style: bold
+  line_height: 1.2
+  margin_bottom: $vertical_spacing
+link:
+  font_color: #002FA7
+outline_list:
+  indent: $base_font_size * 1.5
+code:
+  font_family: mplus1mn
+  font_size: 14
+
