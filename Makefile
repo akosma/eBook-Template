@@ -2,12 +2,13 @@ DIR = _build
 INPUT = master
 OUTPUT = book
 DIAGRAM = --require=asciidoctor-diagram
+MATH = --require=asciidoctor-mathematical
+REQUIRES = ${DIAGRAM} ${MATH}
 OUTPUT_FOLDER = --destination-dir=${DIR}
-HTML = --backend=html5 --a data-uri -a max-width=55em --out-file=${OUTPUT}.html
-PDF =  --backend=pdf --require=asciidoctor-pdf -a pdf-stylesdir=resources/pdfstyles -a pdf-style=default --out-file=${OUTPUT}.pdf
-EPUB_OPTIONS = --backend=epub3 --require=asciidoctor-epub3 -a epub3-stylesdir=resources/epubstyles
-EPUB = ${EPUB_OPTIONS} --out-file=${OUTPUT}.epub
-KINDLE = ${EPUB_OPTIONS} -a ebook-format=kf8 --out-file=${OUTPUT}.mobi
+HTML = --backend=html5 --a data-uri -a max-width=55em
+PDF =  --backend=pdf --require=asciidoctor-pdf -a pdf-stylesdir=resources/pdfstyles -a pdf-style=default
+EPUB = --backend=epub3 --require=asciidoctor-epub3 -a epub3-stylesdir=resources/epubstyles -a imagesdir=images
+KINDLE = ${EPUB} -a ebook-format=kf8
 
 # Public targets
 
@@ -32,16 +33,16 @@ clean:
 # Private targets
 
 create_html:
-	asciidoctor ${DIAGRAM} ${OUTPUT_FOLDER} ${HTML} ${INPUT}.asc; \
+	asciidoctor ${HTML} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.html ${INPUT}.asc; \
 
 create_pdf:
-	asciidoctor ${DIAGRAM} ${OUTPUT_FOLDER} ${PDF} ${INPUT}.asc; \
+	asciidoctor ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.pdf ${INPUT}.asc; \
 
 create_epub:
-	asciidoctor ${DIAGRAM} ${OUTPUT_FOLDER} ${EPUB} ${INPUT}.asc; \
+	asciidoctor ${EPUB} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.epub ${INPUT}.asc; \
 
 create_kindle:
-	asciidoctor ${DIAGRAM} ${OUTPUT_FOLDER} ${KINDLE} ${INPUT}.asc; \
+	asciidoctor ${KINDLE} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.mobi ${INPUT}.asc; \
 
 # Required because of a bug in the epub3 generation,
 # and to delete the intermediate file used in the
