@@ -5,6 +5,7 @@ DIAGRAM = --require=asciidoctor-diagram
 MATH = --require=asciidoctor-mathematical
 REQUIRES = ${DIAGRAM} ${MATH}
 OUTPUT_FOLDER = --destination-dir=${DIR}
+MANPAGE = --backend=manpage
 HTML = --backend=html5 -a max-width=55em
 RAW_HTML = --backend=html5 -a stylesheet! -a source-highlighter!
 PDF =  --backend=pdf --require=asciidoctor-pdf
@@ -13,7 +14,9 @@ KINDLE = ${EPUB} -a ebook-format=kf8
 
 # Public targets
 
-all: html raw_html pdf compressed_pdf epub kindle
+all: manpage html raw_html pdf compressed_pdf epub kindle
+
+manpage: _build/book.1
 
 html: _build/book.html
 
@@ -39,6 +42,9 @@ clean:
 	fi; \
 
 # Private targets
+
+_build/book.1:
+	asciidoctor ${MANPAGE} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.1 ${INPUT}.asc; \
 
 _build/book.html:
 	asciidoctor ${HTML} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.html ${INPUT}.asc; \
