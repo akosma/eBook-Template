@@ -44,7 +44,7 @@ clean:
 # Private targets
 
 _build/book.1:
-	asciidoctor ${MANPAGE} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.1 ${INPUT}.asc; \
+	asciidoctor ${MANPAGE} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.1 ${INPUT}.asc; \
 
 _build/book.html:
 	asciidoctor ${HTML} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.html ${INPUT}.asc; \
