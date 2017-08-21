@@ -5,10 +5,10 @@ DIAGRAM = --require=asciidoctor-diagram
 MATH = --require=asciidoctor-mathematical
 REQUIRES = ${DIAGRAM} ${MATH}
 OUTPUT_FOLDER = --destination-dir=${DIR}
-HTML = --backend=html5 --a data-uri -a max-width=55em
-RAW_HTML = --backend=html5 --a data-uri -a stylesheet! -a source-highlighter!
-PDF =  --backend=pdf --require=asciidoctor-pdf -a pdf-stylesdir=resources/pdfstyles -a pdf-style=default -a media=prepress
-EPUB = --backend=epub3 --require=asciidoctor-epub3 -a epub3-stylesdir=resources/epubstyles -a imagesdir=images -a ebook-validate
+HTML = --backend=html5 -a max-width=55em
+RAW_HTML = --backend=html5 -a stylesheet! -a source-highlighter!
+PDF =  --backend=pdf --require=asciidoctor-pdf
+EPUB = --backend=epub3 --require=asciidoctor-epub3
 KINDLE = ${EPUB} -a ebook-format=kf8
 
 # Public targets
