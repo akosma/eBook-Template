@@ -6,21 +6,29 @@ MATH = --require=asciidoctor-mathematical
 REQUIRES = ${DIAGRAM} ${MATH}
 OUTPUT_FOLDER = --destination-dir=${DIR}
 HTML = --backend=html5 --a data-uri -a max-width=55em
-PDF =  --backend=pdf --require=asciidoctor-pdf -a pdf-stylesdir=resources/pdfstyles -a pdf-style=default
-EPUB = --backend=epub3 --require=asciidoctor-epub3 -a epub3-stylesdir=resources/epubstyles -a imagesdir=images
+RAW_HTML = --backend=html5 --a data-uri -a stylesheet! -a source-highlighter!
+PDF =  --backend=pdf --require=asciidoctor-pdf -a pdf-stylesdir=resources/pdfstyles -a pdf-style=default -a media=prepress
+EPUB = --backend=epub3 --require=asciidoctor-epub3 -a epub3-stylesdir=resources/epubstyles -a imagesdir=images -a ebook-validate
 KINDLE = ${EPUB} -a ebook-format=kf8
 
 # Public targets
 
-all: clean create_html create_pdf create_epub create_kindle bugfix
+all: html raw_html pdf compressed_pdf epub kindle
 
-html: clean create_html
+html: _build/book.html
 
-pdf: clean create_pdf
+raw_html: _build/raw_book.html
 
-epub: clean create_epub bugfix
+pdf: _build/book.pdf
 
-kindle: clean create_kindle bugfix
+compressed_pdf: _build/compressed_book.pdf
+
+epub: _build/book.epub
+
+kindle: _build/book.mobi
+
+stats:
+	wc -w course/*.asc
 
 clean:
 	if [ -d ".asciidoctor" ]; \
@@ -32,25 +40,26 @@ clean:
 
 # Private targets
 
-create_html:
+_build/book.html:
 	asciidoctor ${HTML} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.html ${INPUT}.asc; \
 
-create_pdf:
+_build/raw_book.html:
+	asciidoctor ${RAW_HTML} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=raw_${OUTPUT}.html ${INPUT}.asc; \
+
+_build/book.pdf:
 	asciidoctor ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.pdf ${INPUT}.asc; \
 
-create_epub:
+# Courtesy of
+# http://www.smartjava.org/content/compress-pdf-mac-using-command-line-free
+# Requires `brew install ghostscript`
+_build/compressed_book.pdf: _build/book.pdf
+	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${DIR}/compressed_book.pdf ${DIR}/book.pdf; \
+
+_build/book.epub:
 	asciidoctor ${EPUB} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.epub ${INPUT}.asc; \
 
-create_kindle:
+_build/book.mobi:
 	asciidoctor ${KINDLE} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.mobi ${INPUT}.asc; \
-
-# Required because of a bug in the epub3 generation,
-# and to delete the intermediate file used in the
-# generation of the Kindle file.
-bugfix:
-	if [ -d "chapters/images" ]; \
-		then rm -r chapters/images; \
-	fi; \
 	if [ -e "${DIR}/${OUTPUT}-kf8.epub" ]; \
 		then rm ${DIR}/${OUTPUT}-kf8.epub; \
 	fi; \
