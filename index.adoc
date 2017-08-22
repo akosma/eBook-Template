@@ -3,6 +3,8 @@
 This is a new version of the classic template for eBooks. You can use this
 code to kickstart your writing project from scratch.
 
+Clone with Git: `git clone https://github.com/akosma/eBook-Template.git`
+
 == Design Guidelines
 
 Why using such a complex setup instead of just using a simpler tool like
