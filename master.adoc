@@ -63,15 +63,15 @@ EPUB generation uses the "bw" style (i.e., black and white.)
 
 :sectnums!:
 
-include::chapters/colophon.asc[]
+include::chapters/colophon.adoc[]
 
 // Abstract and Dedication MUST have a level-0 heading in EPUB and Kindle
 // but level-1 in PDF and HTML
 ifndef::backend-epub3[:leveloffset: +1]
-include::chapters/dedication.asc[]
+include::chapters/dedication.adoc[]
 ifndef::backend-epub3[:leveloffset: -1]
 
-include::chapters/preface.asc[]
+include::chapters/preface.adoc[]
 
 :sectnums:
 
@@ -111,25 +111,25 @@ Done --> [*]
 endif::[]
 
 ifndef::backend-epub3[:leveloffset: +1]
-include::chapters/book_thrills.asc[]
+include::chapters/book_thrills.adoc[]
 
-include::chapters/jane.asc[]
+include::chapters/jane.adoc[]
 ifndef::backend-epub3[:leveloffset: -1]
 
-include::chapters/epigraph.asc[]
+include::chapters/epigraph.adoc[]
 
-include::chapters/appendix.asc[]
+include::chapters/appendix.adoc[]
 
-include::chapters/shortcuts.asc[]
+include::chapters/shortcuts.adoc[]
 
-include::chapters/glossary.asc[]
+include::chapters/glossary.adoc[]
 
-include::chapters/qanda.asc[]
+include::chapters/qanda.adoc[]
 
-include::chapters/bibliography.asc[]
+include::chapters/bibliography.adoc[]
 
 
 ifdef::backend-pdf[]
-include::chapters/index.asc[]
+include::chapters/index.adoc[]
 endif::[]
 

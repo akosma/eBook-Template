@@ -31,7 +31,7 @@ epub: _build/book.epub
 kindle: _build/book.mobi
 
 stats:
-	wc -w course/*.asc
+	wc -w course/*.adoc
 
 clean:
 	if [ -d ".asciidoctor" ]; \
@@ -44,16 +44,16 @@ clean:
 # Private targets
 
 _build/book.1:
-	asciidoctor ${MANPAGE} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.1 ${INPUT}.asc; \
+	asciidoctor ${MANPAGE} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.1 ${INPUT}.adoc; \
 
 _build/book.html:
-	asciidoctor ${HTML} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.html ${INPUT}.asc; \
+	asciidoctor ${HTML} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.html ${INPUT}.adoc; \
 
 _build/raw_book.html:
-	asciidoctor ${RAW_HTML} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=raw_${OUTPUT}.html ${INPUT}.asc; \
+	asciidoctor ${RAW_HTML} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=raw_${OUTPUT}.html ${INPUT}.adoc; \
 
 _build/book.pdf:
-	asciidoctor ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.pdf ${INPUT}.asc; \
+	asciidoctor ${PDF} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.pdf ${INPUT}.adoc; \
 
 # Courtesy of
 # http://www.smartjava.org/content/compress-pdf-mac-using-command-line-free
@@ -62,10 +62,10 @@ _build/compressed_book.pdf: _build/book.pdf
 	gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=${DIR}/compressed_book.pdf ${DIR}/book.pdf; \
 
 _build/book.epub:
-	asciidoctor ${EPUB} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.epub ${INPUT}.asc; \
+	asciidoctor ${EPUB} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.epub ${INPUT}.adoc; \
 
 _build/book.mobi:
-	asciidoctor ${KINDLE} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.mobi ${INPUT}.asc; \
+	asciidoctor ${KINDLE} ${REQUIRES} ${OUTPUT_FOLDER} --out-file=${OUTPUT}.mobi ${INPUT}.adoc; \
 	if [ -e "${DIR}/${OUTPUT}-kf8.epub" ]; \
 		then rm ${DIR}/${OUTPUT}-kf8.epub; \
 	fi; \
