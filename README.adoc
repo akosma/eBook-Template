@@ -112,7 +112,7 @@ If you experience compilation problems with `asciidoctor-mathematical` you can
 the https://github.com/asciidoctor/asciidoctor-mathematical[project] in case of
 issues.
 
-=== Ubuntu Linux (16.04/16.10)
+=== Ubuntu Linux (16.04/16.10/18.04)
 
 Install the following libraries:
 
@@ -125,16 +125,21 @@ Install the following libraries:
     sudo MATHEMATICAL_SKIP_STRDUP=1 gem install mathematical
     sudo gem install asciidoctor-mathematical
 
-The libraries used in this template require `liblasem` which might not be
-available in your distribution. You should install it manually (well, at
-least I had to) this is how to do this:
+[Unfortunately](https://github.com/asciidoctor/asciidoctor-epub3/issues/179)
+the current versions of Asciidoctor on Ubuntu exhibit a weird behaviour when
+using asciidoctor-diagram during the generation of EPUB output.
 
-    wget http://ie.archive.ubuntu.com/gnome/sources/lasem/0.5/lasem-0.5.0.tar.xz
-    tar xf lasem-0.5.0.tar.xz
-    pushd lasem-0.5.0
-    ./configure && make && sudo make install
-    sudo ldconfig
-    popd
+== Docker
+
+The project includes a `Dockerfile` which can be built using the following
+command:
+
+`docker build -t "ebook-template" .`
+
+Once built, the Docker container can be used as follows on the local folder
+where the Makefile is located:
+
+`docker run -v ${PWD}:/workdir ebook-template`
 
 == License
 
