@@ -129,7 +129,7 @@ Install the following libraries:
 the current versions of Asciidoctor on Ubuntu exhibit a weird behaviour when
 using asciidoctor-diagram during the generation of EPUB output.
 
-== Docker
+=== Docker
 
 The project includes a `Dockerfile` which can be built using the following
 command:
