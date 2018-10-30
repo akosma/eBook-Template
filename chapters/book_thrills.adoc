@@ -20,27 +20,27 @@ reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
 qui officia ((deserunt)) mollit anim id est laborum.
 
-[plantuml,diagram-classes,png]
-.UIResponder Hierarchy Diagram
-....
-title UIResponder Hierarchy Diagram
+//[plantuml,diagram-classes,png]
+//.UIResponder Hierarchy Diagram
+//....
+//title UIResponder Hierarchy Diagram
 
-legend right
-  <b>UIViewController</b> and <b>UIView</b>
-  are subclasses of UIResponder
-endlegend
+//legend right
+//<b>UIViewController</b> and <b>UIView</b>
+//are subclasses of UIResponder
+//endlegend
 
-note right of NSObject : In Swift, every class\nextends this one.
+//note right of NSObject : In Swift, every class\nextends this one.
 
-class NSObject << (P,LightGray) >>
-class UIResponder
-class UIView
-class UIViewController
+//class NSObject << (P,LightGray) >>
+//class UIResponder
+//class UIView
+//class UIViewController
 
-NSObject <|-- UIResponder
-UIResponder <|-- UIView
-UIResponder <|-- UIViewController
-....
+//NSObject <|-- UIResponder
+//UIResponder <|-- UIView
+//UIResponder <|-- UIViewController
+//....
 
 == Conclusion
 

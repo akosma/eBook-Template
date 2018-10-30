@@ -1,4 +1,4 @@
-[chapter-2]
+[[chapter-2]]
 = More About Jane
 
 Chapter two has just begun.
@@ -12,53 +12,53 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 == Mathematics
 
-This are very important equations; make sure you learn them by heart.
+//This are very important equations; make sure you learn them by heart.
 
-[latexmath]
-++++
-k_{n+1} = n^2 + k_n^2 - k_{n-1}
-++++
+//[latexmath]
+//++++
+//k_{n+1} = n^2 + k_n^2 - k_{n-1}
+//++++
 
-[latexmath]
-++++
-\cos (2\theta) = \cos^2 \theta - \sin^2 \theta
-++++
+//[latexmath]
+//++++
+//\cos (2\theta) = \cos^2 \theta - \sin^2 \theta
+//++++
 
-[latexmath]
-++++
-f(n) = n^5 + 4n^2 + 2 |_{n=17}
-++++
+//[latexmath]
+//++++
+//f(n) = n^5 + 4n^2 + 2 |_{n=17}
+//++++
 
-[latexmath]
-++++
-\frac{n!}{k!(n-k)!} = \binom{n}{k}
-++++
+//[latexmath]
+//++++
+//\frac{n!}{k!(n-k)!} = \binom{n}{k}
+//++++
 
-[latexmath]
-++++
-  x = a_0 + \cfrac{1}{a_1
-          + \cfrac{1}{a_2
-          + \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }
-++++
+//[latexmath]
+//++++
+//x = a_0 + \cfrac{1}{a_1
+//+ \cfrac{1}{a_2
+//+ \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }
+//++++
 
-[latexmath]
-++++
-M = \begin{bmatrix}
-       \frac{5}{6} & \frac{1}{6} & 0           \\[0.3em]
-       \frac{5}{6} & 0           & \frac{1}{6} \\[0.3em]
-       0           & \frac{5}{6} & \frac{1}{6}
-     \end{bmatrix}
-++++
+//[latexmath]
+//++++
+//M = \begin{bmatrix}
+//\frac{5}{6} & \frac{1}{6} & 0           \\[0.3em]
+//\frac{5}{6} & 0           & \frac{1}{6} \\[0.3em]
+//0           & \frac{5}{6} & \frac{1}{6}
+//\end{bmatrix}
+//++++
 
-[latexmath]
-++++
-\left(\!
-    \begin{array}{c}
-      n \\
-      r
-    \end{array}
-  \!\right) = \frac{n!}{r!(n-r)!}
-++++
+//[latexmath]
+//++++
+//\left(\!
+//\begin{array}{c}
+//n \\
+//r
+//\end{array}
+//\!\right) = \frac{n!}{r!(n-r)!}
+//++++
 
 ((Lorem)) ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -73,7 +73,7 @@ developers.
 .Some image here
 image::image.png[]
 
-[section-1]
+[[section-1]]
 == Some code samples
 
 This is section 1 of chapter 2. We are going to add more JavaScript code, but

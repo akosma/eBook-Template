@@ -3,7 +3,8 @@ INPUT = master
 OUTPUT = book
 DIAGRAM = --require=asciidoctor-diagram
 MATH = --require=asciidoctor-mathematical
-REQUIRES = ${DIAGRAM} ${MATH}
+#REQUIRES = ${DIAGRAM} ${MATH}
+REQUIRES =
 OUTPUT_FOLDER = --destination-dir=${DIR}
 MANPAGE = --backend=manpage
 HTML = --backend=html5 -a max-width=55em
