@@ -1,5 +1,5 @@
-# docker build -t "akosma:ebook-template" .
-# docker run -v ${PWD}:/workdir akosma:ebook-template
+# docker build -t "ebook-template" .
+# docker run -v ${PWD}:/workdir ebook-template
 FROM ubuntu:18.04
 MAINTAINER Adrian Kosmaczewski "akosma@me.com"
 
