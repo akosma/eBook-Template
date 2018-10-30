@@ -52,6 +52,10 @@ ifdef::backend-epub3[]
 :mathematical-ppi: 300
 endif::[]
 
+ifdef::ebook-format-kf8[]
+// Settings for Kindle
+endif::[]
+
 ////
 Do not use ":pygments-css: class" in the block above, as this blocks
 the generation and/or display of highlighted code in EPUB output.
@@ -111,9 +115,9 @@ culpa qui officia deserunt mollit anim id est laborum.
 endif::[]
 
 ifndef::backend-epub3[:leveloffset: +1]
-include::chapters/book_thrills.adoc[]
+include::chapters/chapter_01.adoc[]
 
-include::chapters/jane.adoc[]
+include::chapters/chapter_02.adoc[]
 ifndef::backend-epub3[:leveloffset: -1]
 
 include::chapters/epigraph.adoc[]
