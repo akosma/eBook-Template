@@ -2,4 +2,8 @@
 _build
 .asciidoctor
 chapters/images
+stem-*.png
+stem-*.svg
+diag-*.png
+diag-*.svg
 

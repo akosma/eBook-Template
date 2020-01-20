@@ -12,53 +12,65 @@ culpa qui officia deserunt mollit anim id est laborum.
 
 == Mathematics
 
-//This are very important equations; make sure you learn them by heart.
+This are very important equations; make sure you learn them by heart.
 
-//[latexmath]
-//++++
-//k_{n+1} = n^2 + k_n^2 - k_{n-1}
-//++++
+[stem]
+++++
+k_{n+1} = n^2 + k_n^2 - k_{n-1}
+++++
 
-//[latexmath]
-//++++
-//\cos (2\theta) = \cos^2 \theta - \sin^2 \theta
-//++++
+Another one:
 
-//[latexmath]
-//++++
-//f(n) = n^5 + 4n^2 + 2 |_{n=17}
-//++++
+[stem]
+++++
+\cos (2 \theta) = \cos^2 \theta - \sin^2 \theta
+++++
 
-//[latexmath]
-//++++
-//\frac{n!}{k!(n-k)!} = \binom{n}{k}
-//++++
+Let's continue:
 
-//[latexmath]
-//++++
-//x = a_0 + \cfrac{1}{a_1
-//+ \cfrac{1}{a_2
-//+ \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }
-//++++
+[stem]
+++++
+f(n) = n^5 + 4n^2 + 2 |_{n=17}
+++++
 
-//[latexmath]
-//++++
-//M = \begin{bmatrix}
-//\frac{5}{6} & \frac{1}{6} & 0           \\[0.3em]
-//\frac{5}{6} & 0           & \frac{1}{6} \\[0.3em]
-//0           & \frac{5}{6} & \frac{1}{6}
-//\end{bmatrix}
-//++++
+And we can infer that:
 
-//[latexmath]
-//++++
-//\left(\!
-//\begin{array}{c}
-//n \\
-//r
-//\end{array}
-//\!\right) = \frac{n!}{r!(n-r)!}
-//++++
+[stem]
+++++
+\frac{n!}{k!(n-k)!} = \binom{n}{k}
+++++
+
+But since:
+
+[stem]
+++++
+x = a_0 + \cfrac{1}{a_1
++ \cfrac{1}{a_2
++ \cfrac{1}{a_3 + \cfrac{1}{a_4} } } }
+++++
+
+We can then write that:
+
+[stem]
+++++
+M = \begin{bmatrix}
+\frac{5}{6} & \frac{1}{6} & 0           \\[0.3em]
+\frac{5}{6} & 0           & \frac{1}{6} \\[0.3em]
+0           & \frac{5}{6} & \frac{1}{6}
+\end{bmatrix}
+++++
+
+Without forgetting:
+
+[stem]
+++++
+\left(\!
+\begin{array}{c}
+n \\
+r
+\end{array}
+\!\right) = \frac{n!}{r!(n-r)!}
+++++
 
 ((Lorem)) ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis

@@ -20,12 +20,11 @@
 :icon-set: fi
 :imagesdir: {docdir}/images
 :source-language: swift
-:source-highlighter: pygments
-:pygments-style: xcode
+:source-highlighter: rouge
 :codedir: {docdir}/code
 :datadir: {docdir}/data
 :experimental:
-:stem:
+:stem: latexmath
 :hide-uri-scheme:
 :chapter-label: Chapter
 :appendix-caption: Appendix
@@ -41,7 +40,7 @@ ifdef::backend-pdf[]
 :media: prepress
 :pdf-stylesdir: _resources/pdfstyles
 :pdf-style: default
-:mathematical-format: png
+:mathematical-format: svg
 endif::[]
 
 ifdef::backend-epub3[]
@@ -49,7 +48,7 @@ ifdef::backend-epub3[]
 :epub3-stylesdir: _resources/epubstyles
 :ebook-validate:
 :mathematical-format: svg
-:mathematical-ppi: 300
+:mathematical-inline: true
 endif::[]
 
 ifdef::ebook-format-kf8[]
@@ -93,23 +92,23 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
 fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
 culpa qui officia deserunt mollit anim id est laborum.
 
-//[plantuml,diagram-state,png]
-//.UIViewController States
-//....
-//title UIViewController States
+[plantuml,diagram-state,png]
+.UIViewController States
+....
+title UIViewController States
 
-//legend right
-//We use states to make the code easier to understand
-//endlegend
+legend right
+We use states to make the code easier to understand
+endlegend
 
-//[*] --> Idle
-//Idle --> [*]
-//Idle : Right after starting
+[*] --> Idle
+Idle --> [*]
+Idle : Right after starting
 
-//Idle -> Done
-//Done : Right before stopping
-//Done --> [*]
-//....
+Idle -> Done
+Done : Right before stopping
+Done --> [*]
+....
 
 --
 endif::[]
